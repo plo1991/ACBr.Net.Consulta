@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{138B3DB9-7CFD-4089-AEFF-E66B7B4A76F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACBr.Net.Consulta</RootNamespace>
+    <AssemblyName>ACBr.Net.Consulta</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Debug\ACBr.Net.Consulta.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Release\ACBr.Net.Consulta.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACBr.Net.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=d3bb9130f8b775a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\ACBr.Net.Core.1.2.0.0\lib\net40\ACBr.Net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACBrCaptchaException.cs" />
+    <Compile Include="ACBrComponentConsulta.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="CEP\CepWsClass.cs" />
+    <Compile Include="ConsultaExtensions.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraBA.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraBase.cs" />
+    <Compile Include="CaptchaEventArgs.cs" />
+    <Compile Include="CEP\CepWebService.cs" />
+    <Compile Include="CEP\CorreiosWebservice.cs" />
+    <Compile Include="CEP\ViaCepWebservice.cs" />
+    <Compile Include="Sintegra\ACBrConsultaSintegra.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="Receita\ACBrConsultaCNPJ.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="Receita\ACBrConsultaCPF.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="CEP\ACBrCEP.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="ACBrEmpresa.cs" />
+    <Compile Include="ACBrEndereco.cs" />
+    <Compile Include="IBGE\ACBrIBGE.cs">
+      <SubType>ACBr.Net</SubType>
+    </Compile>
+    <Compile Include="ACBrMunicipio.cs" />
+    <Compile Include="ACBrPessoa.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraDF.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraES.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraGO.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraMS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsultaUF.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraMT.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraPI.cs" />
+    <Compile Include="Sintegra\ConsultaSintegraSP.cs" />
+    <Compile Include="Sintegra\IConsultaSintegra.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ACBrConsultaCNPJ.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ACBrConsultaCPF.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ACBrIBGE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ACBrCEP.bmp" />
+    <EmbeddedResource Include="ACBrConsultaSintegra.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
